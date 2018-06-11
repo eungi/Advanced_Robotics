@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+	<arg name="model" default="$(find robot)/urdf/RR-robot.urdf" />
+	<arg name="gui" default="True" />
+	<param name="robot_description" textfile="$(arg model)" />
+	<param name="use_gui" value="$(arg gui)"/>
+	<!--node pkg="joint_state_publisher" type="joint_state_publisher" name="joint_state_publisher" /-->
+	<node pkg="robot_state_publisher" type="state_publisher" name="robot_state_publisher" />
+    	<node name="computer_problem_6_node" 
+          pkg="robot" 
+          type="computer_problem_6_node"/>
+</launch>
